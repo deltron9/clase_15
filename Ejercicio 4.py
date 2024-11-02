@@ -34,7 +34,7 @@ como parámetro.
 como un objeto de tipo fecha 😉
 '''
 
-titulo = 'Karina | J mena | Angela - Sinvergüenza'
+tema = 'Karina | J mena | Angela - Sinvergüenza'
 
 vistas = '45.8 millones'
 
@@ -44,11 +44,11 @@ link = 'https://www.youtube.com/watch?v=AhZvCgk1Ay4'
 
 fecha_lanzamiento = '2023-12-05'
 
-def obtener_colaboradores(titulo):
-    return titulo.split(' - ')[0].split(' | ')
+def obtener_colaboradores(tema):
+    return tema.split(' - ')[0].split(' | ')
 
-def obtener_nombre_tema(titulo):
-    return titulo.split(' - ')[1]
+def obtener_nombre_tema(tema):
+    return tema.split(' - ')[1]
 
 def convertir_vistas_numerico(vistas):
     return int(float(vistas.split()[0]) * 1000000)
@@ -56,8 +56,8 @@ def convertir_vistas_numerico(vistas):
 def convertir_duracion_numerico(duracion):
     return int(duracion)
 
-def obtener_codigo(url):
-    codigo = url.split('=')[-1]
+def obtener_codigo(link):
+    codigo = link.split('=')[-1]
     return codigo
 
 def formatear_fecha(fecha_lanzamiento):
@@ -72,11 +72,11 @@ def menu_filtro():
         
         match opcion:
             case '1':
-                colaboradores = obtener_colaboradores(titulo)
+                colaboradores = obtener_colaboradores(tema)
                 print(f'colaboradores: {colaboradores}')
                 
             case '2':
-                nombre_tema = obtener_nombre_tema(titulo)
+                nombre_tema = obtener_nombre_tema(tema)
                 print(f'Nombre del tema: {nombre_tema}')
                 
             case '3':
